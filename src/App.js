@@ -1,12 +1,28 @@
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import './App.css';
 
-function clickhandle (props) {
-  alert("you clicked on" + props.name)
+function Stud(props) {
+  return (
+  <>
+    <Router>
+      <div>
+        <Link to={props.name}><li> { props.name }</li></Link>
+      </div>
+      <Routes>
+        <Route path={props.name} element={<Display name={props.name}/>}/>
+      </Routes>
+    </Router>
+  
+  </>
+  ); 
 }
 
-function Stud(props) {
-  return <li onClick={() => clickhandle(props)}> { props.name }</li>;
-  
+const Display = (props) =>{
+  return (
+    <div className="main">
+      <h1>Hello {props.name}</h1>
+    </div>
+  );
 }
 
 function App() {
