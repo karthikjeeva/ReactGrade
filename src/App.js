@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import './App.css';
+import LineChart from "./LineGraph";
 
 function Stud(props) {
   return (
@@ -9,7 +10,7 @@ function Stud(props) {
         <Link to={props.name}><li> { props.name }</li></Link>
       </div>
       <Routes>
-        <Route path={props.name} element={<Display name={props.name}/>}/>
+        <Route path={props.name} element={<Display />}/>
       </Routes>
     </Router>
   
@@ -17,10 +18,10 @@ function Stud(props) {
   ); 
 }
 
-const Display = (props) =>{
+const Display = () =>{
   return (
     <div className="main">
-      <h1>Hello {props.name}</h1>
+      <LineChart/>
     </div>
   );
 }
